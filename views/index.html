@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <title>Productos INF</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS v5.2.1 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <!--Iconos de boostrap-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">   
+
+</head>
+
+<body>
+
+  <div class="container mt-3">
+    <div class="card">
+      <div class="card-header bg-info text-light">
+        <div class="row">
+          <div class="col-md-6">
+            <strong>Productos</strong>
+          </div>
+          <div class="col-md-6 text-end">
+            <button class="btn btn-success btn-sm" id="abrir-modal" data-bs-toggle="modal" data-bs-target="#modal-registro-cursos"><i class="bi bi-plus-circle"></i> Agregar producto</button>
+          </div>
+        </div>    
+
+      </div>
+      <div class="card-body">
+        <!--Tabla-->
+        <table class="table table-sm table-striped" id="tabla-cursos">
+          <colgroup>
+            <col width = "10%">
+            <col width = "10%">
+            <col width = "10%">
+            <col width = "10%">
+            <col width = "10%">
+            <col width = "10%">
+            <col width = "10%">
+          </colgroup>
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Nombre</th>
+              <th>Modelo</th>
+              <th>Marca</th>
+              <th>Color</th>
+              <th>Conectividad</th>
+              <th>Peso</th>
+              <th>Fecha</th>
+              <th>Precio</th>
+              <th>Operaciones</th>
+            </tr>
+          </thead>
+          <tbody>
+          </tbody>
+        </table>
+
+    </div>
+    <div class="card-footer text-end">
+       <button class="btn btn-primary btn-sm" id="actualizar">Actualizar datos</button>
+    </div>
+    </div>
+  </div> <!--Fin de container-->
+
+    <!--BS5-MODAL-DEFAULT-->
+  
+  <!-- Modal Body -->
+  <!-- if you want to close by clicking outside the modal, delete the last endpoint:data-bs-backdrop and data-bs-keyboard -->
+  <div class="modal fade" id="modal-registro-cursos" tabindex="-1"  role="dialog" aria-labelledby="modalTitleId" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header bg-danger text-light">
+          <h5 class="modal-title" id="modalTitleId">Registro de productos</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form id="formulario-productos">
+            <div class="mb-3">
+              <label for="nombreproducto" class="form-label">Nombre productos</label>
+              <input type="text" class ="form-control form-control-sm" id="nombreproducto">
+            </div>
+        <div class="modal-body">
+          <form id="formulario-modelos">
+            <div class="mb-3">
+              <label for="modelo" class="form-label">Modelo</label>
+              <input type="text" class ="form-control form-control-sm" id="modelo">
+            </div>
+            <div class="modal-body">
+              <form action="">
+                <div class="mb-3">
+                  <label for="marca" class="form-label">Marca</label>
+                  <select id="marca" class="form-select form-select-sm">
+                    <option value="">Seleccione</option>
+                      <option value="Logitech">Logitech</option>
+                      <option value="Corsair">Corsair</option>
+                      <option value="ASUS ROG STRIX">ASUS ROG STRIX</option>
+                      <option value="Samsung">Samsung</option>
+                      <option value="LG">LG</option>
+                      <option value="Razer">Razer</option>
+                  </select>
+                </div>  
+                <div class="class mb-3">
+                  <label for="complejidad" class="form-label">Color</label>
+                  <select id="complejidad" class="form-select form-select-sm">
+                    <option value="">Seleccione</option>
+                    <option value="Rojo">Rojo</option>
+                    <option value="Blanco">Blanco</option>
+                    <option value="Negro">Negro</option>
+                    <option value="Plomo">Plomo</option>
+                  </select>
+                </div>
+                <div class="class mb-3">
+                  <label for="complejidad" class="form-label">Conectividad</label>
+                  <select id="complejidad" class="form-select form-select-sm">
+                    <option value="">Seleccione</option>
+                    <option value="Inalambrico">Inalambrico</option>
+                    <option value="Cable USB">Cable USB</option>
+                    <option value="Armado">Armado</option>
+                  </select>
+                </div>
+                <div class="class mb-3">
+                  <label for="complejidad" class="form-label">Peso</label>
+                  <select id="complejidad" class="form-select form-select-sm">
+                    <option value="">Seleccione</option>
+                    <option value="Ligero">Ligero</option>
+                    <option value="Pesado">Pesado</option>
+                    <option value="Delicado">Delicado</option>
+                  </select>
+                </div>
+                <div class="class-md-3">
+                  <label for="fechainicio" class="class-form-label">Fecha de inicio</label>
+                  <input type="date" class="form-control form-control-sm" id="fechainicio">
+                </div>
+                <div class="class-mb-3">
+                  <label for="precio" class="class-form-label">Precio</label>
+                  <input type="text" class="form-control form-control-sm" id="precio">
+                </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Cerrar</button>
+          <button type="button" class="btn btn-primary btn-sm" id="guardar-curso">Guardar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+
+
+ <!--Fin Modal-->
+
+
+  <!-- Bootstrap JavaScript Libraries -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+    integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+    integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
+  </script>
+
+  <!--JQuery-->
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+
+
+</body>
+
+</html>
