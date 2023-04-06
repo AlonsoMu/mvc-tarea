@@ -1,6 +1,6 @@
 <?php
 
-require_once "Conexion.php";
+require_once "conexion.php";
 
 //MODELO = contiende la logica
 //extends : Herencia (PDO) en PHP
@@ -50,7 +50,7 @@ class Producto extends Conexion{
       
     }
     catch (Exception $e) {
-      die($e->getMessage());
+      die($e->getMessage());    
     }
   }
 

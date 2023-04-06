@@ -25,7 +25,7 @@
             <strong>Productos</strong>
           </div>
           <div class="col-md-6 text-end">
-            <button class="btn btn-success btn-sm" id="abrir-modal" data-bs-toggle="modal" data-bs-target="#modal-registro-cursos"><i class="bi bi-plus-circle"></i> Agregar producto</button>
+            <button class="btn btn-success btn-sm" id="abrir-modal" data-bs-toggle="modal" data-bs-target="#modal-registro-productos"><i class="bi bi-plus-circle"></i> Agregar producto</button>
           </div>
         </div>    
 
@@ -71,7 +71,7 @@
   
   <!-- Modal Body -->
   <!-- if you want to close by clicking outside the modal, delete the last endpoint:data-bs-backdrop and data-bs-keyboard -->
-  <div class="modal fade" id="modal-registro-cursos" tabindex="-1"  role="dialog" aria-labelledby="modalTitleId" aria-hidden="true">
+  <div class="modal fade" id="modal-registro-productos" tabindex="-1"  role="dialog" aria-labelledby="modalTitleId" aria-hidden="true">
     <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered" role="document">
       <div class="modal-content">
         <div class="modal-header bg-danger text-light">
@@ -105,8 +105,8 @@
                   </select>
                 </div>  
                 <div class="class mb-3">
-                  <label for="complejidad" class="form-label">Color</label>
-                  <select id="complejidad" class="form-select form-select-sm">
+                  <label for="color" class="form-label">Color</label>
+                  <select id="color" class="form-select form-select-sm">
                     <option value="">Seleccione</option>
                     <option value="Rojo">Rojo</option>
                     <option value="Blanco">Blanco</option>
@@ -115,8 +115,8 @@
                   </select>
                 </div>
                 <div class="class mb-3">
-                  <label for="complejidad" class="form-label">Conectividad</label>
-                  <select id="complejidad" class="form-select form-select-sm">
+                  <label for="conectividad" class="form-label">Conectividad</label>
+                  <select id="conectividad" class="form-select form-select-sm">
                     <option value="">Seleccione</option>
                     <option value="Inalambrico">Inalambrico</option>
                     <option value="Cable USB">Cable USB</option>
@@ -124,8 +124,8 @@
                   </select>
                 </div>
                 <div class="class mb-3">
-                  <label for="complejidad" class="form-label">Peso</label>
-                  <select id="complejidad" class="form-select form-select-sm">
+                  <label for="peso" class="form-label">Peso</label>
+                  <select id="peso" class="form-select form-select-sm">
                     <option value="">Seleccione</option>
                     <option value="Ligero">Ligero</option>
                     <option value="Pesado">Pesado</option>
@@ -198,7 +198,7 @@
               marca             : $("#marca").val(),
               color             : $("#color").val(),
               conectividad      : $("#conectividad").val(),
-              peso              : $("peso").val(),
+              peso              : $("#peso").val(),
               fechainicio       : $("#fechainicio").val(),
               precio            : $("#precio").val()
             },

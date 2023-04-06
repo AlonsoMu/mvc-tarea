@@ -84,10 +84,10 @@ IN _idproducto INT
 )
 BEGIN
 UPDATE productos SET estado = '0'
-	WHERE idcurso = _idproducto;
+	WHERE idproducto = _idproducto;
 END$$
 
-CALL spu_productos_eliminar(4)
+CALL spu_productos_eliminar()
 
 DROP PROCEDURE
 
