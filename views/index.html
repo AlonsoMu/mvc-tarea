@@ -32,7 +32,7 @@
       </div>
       <div class="card-body">
         <!--Tabla-->
-        <table class="table table-sm table-striped" id="tabla-cursos">
+        <table class="table table-sm table-striped" id="tabla-productos">
           <colgroup>
             <col width = "10%">
             <col width = "10%">
@@ -53,7 +53,7 @@
               <th>Peso</th>
               <th>Fecha</th>
               <th>Precio</th>
-              <th>Operaciones</th>
+              <th>Eliminar/Editar</th>
             </tr>
           </thead>
           <tbody>
@@ -168,6 +168,88 @@
   <!--JQuery-->
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 
+   <script>
+    $(document).ready(function(){
+
+      function mostrarProductos(){
+        $.ajax({
+          url: '../controllers/producto.controller.php',
+          type: 'POST',
+          data: {operacion: 'listar'},
+          dataType: 'text',
+          success: function(result){
+            $("#tabla-productos tbody").html(result)
+          }
+        });
+      }
+
+
+      function registrarProducto(){
+        //Pendiente de validar....
+        //confirm("¿Te gusta el DEV?");
+        if (confirm("¿Está seguro de registrar este nuevo producto?")){
+          $.ajax({
+            url: '../controllers/producto.controller.php',
+            type: 'POST',
+            data: {
+              operacion         : 'registrar',
+              nombreproducto    : $("#nombreproducto").val(),
+              modelo            : $("#modelo").val(),
+              marca             : $("#marca").val(),
+              color             : $("#color").val(),
+              conectividad      : $("#conectividad").val(),
+              peso              : $("peso").val(),
+              fechainicio       : $("#fechainicio").val(),
+              precio            : $("#precio").val()
+            },
+            success: function(result){
+              if (result == ""){
+                //Reiniciar el formulario
+                $("#formulario-productos")[0].reset();
+
+                //Actualizar la tabla
+                mostrarProductos();
+
+                //Cerrar el modal
+                $("modal-registro-productos").modal('hide');
+              }
+            }
+          });
+        }
+      }
+
+
+      
+      //Eventos
+      $("#guardar-producto").click(registrarProducto);
+
+      //Al pulsar click sobre boton ROJO, se elimine el registro
+      //Detectaremos eventos de los objetos creados de manera asincrona en...
+      $("#tabla-productos tbody").on("click",".eliminar", function(){
+        const idproductoEliminar = $(this).data("idproducto");
+        if (confirm("¿Está seguro de proceder?")){
+          $.ajax({
+            url: '../controllers/producto.controller.php',
+            type: 'POST',
+            data: {
+              operacion   : 'eliminar',
+              idproducto    :  idproductoEliminar
+            },
+            success: function(result){
+              if(result == ""){
+                mostrarProductos();
+              }
+            }
+          });
+        }
+      });
+
+      //Ejecucion automatica
+      mostrarProductos();
+
+
+    });
+  </script>
 
 
 </body>
