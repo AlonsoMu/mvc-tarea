@@ -81,72 +81,67 @@
         <div class="modal-body">
           <form id="formulario-productos">
             <div class="mb-3">
-              <label for="nombreproducto" class="form-label">Nombre productos</label>
-              <input type="text" class ="form-control form-control-sm" id="nombreproducto">
+              <label for="marca" class="form-label">Marca</label>
+              <select id="marca" class="form-select form-select-sm">
+                <option value="">Seleccione</option>
+                  <option value="Logitech">Logitech</option>
+                  <option value="Corsair">Corsair</option>
+                  <option value="ASUS ROG STRIX">ASUS ROG STRIX</option>
+                  <option value="Samsung">Samsung</option>
+                  <option value="LG">LG</option>
+                  <option value="Razer">Razer</option>
+              </select>
             </div>
-        <div class="modal-body">
-          <form id="formulario-modelos">
             <div class="mb-3">
               <label for="modelo" class="form-label">Modelo</label>
               <input type="text" class ="form-control form-control-sm" id="modelo">
             </div>
-            <div class="modal-body">
-              <form action="">
-                <div class="mb-3">
-                  <label for="marca" class="form-label">Marca</label>
-                  <select id="marca" class="form-select form-select-sm">
-                    <option value="">Seleccione</option>
-                      <option value="Logitech">Logitech</option>
-                      <option value="Corsair">Corsair</option>
-                      <option value="ASUS ROG STRIX">ASUS ROG STRIX</option>
-                      <option value="Samsung">Samsung</option>
-                      <option value="LG">LG</option>
-                      <option value="Razer">Razer</option>
-                  </select>
-                </div>  
-                <div class="class mb-3">
-                  <label for="color" class="form-label">Color</label>
-                  <select id="color" class="form-select form-select-sm">
-                    <option value="">Seleccione</option>
-                    <option value="Rojo">Rojo</option>
-                    <option value="Blanco">Blanco</option>
-                    <option value="Negro">Negro</option>
-                    <option value="Plomo">Plomo</option>
-                  </select>
-                </div>
-                <div class="class mb-3">
-                  <label for="conectividad" class="form-label">Conectividad</label>
-                  <select id="conectividad" class="form-select form-select-sm">
-                    <option value="">Seleccione</option>
-                    <option value="Inalambrico">Inalambrico</option>
-                    <option value="Cable USB">Cable USB</option>
-                    <option value="Armado">Armado</option>
-                  </select>
-                </div>
-                <div class="class mb-3">
-                  <label for="peso" class="form-label">Peso</label>
-                  <select id="peso" class="form-select form-select-sm">
-                    <option value="">Seleccione</option>
-                    <option value="Ligero">Ligero</option>
-                    <option value="Pesado">Pesado</option>
-                    <option value="Delicado">Delicado</option>
-                  </select>
-                </div>
-                <div class="class-md-3">
-                  <label for="fechainicio" class="class-form-label">Fecha de inicio</label>
-                  <input type="date" class="form-control form-control-sm" id="fechainicio">
-                </div>
-                <div class="class-mb-3">
-                  <label for="precio" class="class-form-label">Precio</label>
-                  <input type="text" class="form-control form-control-sm" id="precio">
-                </div>
+            <div class="mb-3">
+              <label for="nombreproducto" class="form-label">Nombre productos</label>
+              <input type="text" class ="form-control form-control-sm" id="nombreproducto">
+            </div>
+            <div class="mb-3">
+              <label for="color" class="form-label">Color</label>
+              <select id="color" class="form-select form-select-sm">
+                <option value="">Seleccione</option>
+                <option value="Rojo">Rojo</option>
+                <option value="Blanco">Blanco</option>
+                <option value="Negro">Negro</option>
+                <option value="Plomo">Plomo</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <label for="conectividad" class="form-label">Conectividad</label>
+              <select id="conectividad" class="form-select form-select-sm">
+                <option value="">Seleccione</option>
+                <option value="Inalambrico">Inalambrico</option>
+                <option value="Cable USB">Cable USB</option>
+                <option value="Armado">Armado</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <label for="peso" class="form-label">Peso</label>
+              <select id="peso" class="form-select form-select-sm">
+                <option value="">Seleccione</option>
+                <option value="Ligero">Ligero</option>
+                <option value="Pesado">Pesado</option>
+                <option value="Delicado">Delicado</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <label for="fechainicio" class="class-form-label">Fecha de inicio</label>
+              <input type="date" class="form-control form-control-sm" id="fechainicio">
+            </div>
+            <div class="mb-3">
+              <label for="precio" class="class-form-label">Precio</label>
+              <input type="text" class="form-control form-control-sm" id="precio">
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Cerrar</button>
+              <button type="button" class="btn btn-primary btn-sm" id="guardar-producto">Guardar</button>
+            </div>
           </form>
         </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Cerrar</button>
-          <button type="button" class="btn btn-primary btn-sm" id="guardar-curso">Guardar</button>
-        </div>
-      </div>
     </div>
   </div>
   
@@ -211,7 +206,7 @@
                 mostrarProductos();
 
                 //Cerrar el modal
-                $("modal-registro-productos").modal('hide');
+                $("#modal-registro-productos").modal('hide');
               }
             }
           });

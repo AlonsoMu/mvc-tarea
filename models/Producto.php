@@ -43,7 +43,7 @@ class Producto extends Conexion{
           $datos["color"],
           $datos["conectividad"],
           $datos["peso"],
-          $datos["fecharegistro"],
+          $datos["fechainicio"],
           $datos["precio"]
         )
       );
@@ -53,6 +53,8 @@ class Producto extends Conexion{
       die($e->getMessage());    
     }
   }
+
+
 
   public function eliminarProducto($idproducto = 0){
     try {

@@ -51,7 +51,7 @@ if (isset($_POST['operacion'])){
       "color"               => $_POST['color'],
       "conectividad"        => $_POST['conectividad'],
       "peso"                => $_POST['peso'],
-      "fecharegistro"       => $_POST['fecharegistro'],
+      "fechainicio"         => $_POST['fechainicio'],
       "precio"              => $_POST['precio']
     ];
 
