@@ -60,6 +60,26 @@ if (isset($_POST['operacion'])){
 
   }
 
+  /*if($_POST['operacion'] == 'actualizar'){
+
+    //Paso 1: Recpger los datos que nos envia la vista (FORM,utilizando ajax)
+    $idproducto = $idproducto;
+    $datosForm = [
+      "nombreproducto"      => $_POST['nombreproducto'], //CLAVES // VALORES
+      "modelo"              => $_POST['modelo'],
+      "marca"               => $_POST['marca'],
+      "color"               => $_POST['color'],
+      "conectividad"        => $_POST['conectividad'],
+      "peso"                => $_POST['peso'],
+      "fechainicio"         => $_POST['fechainicio'],
+      "precio"              => $_POST['precio']
+    ];
+
+    //Paso 2: Enviar el arreglo como paramentro del metodo
+      $producto->actualizarProducto($idproducto, $datosForm);
+
+  }*/
+
   if($_POST['operacion'] == 'eliminar'){
     $producto->eliminarProducto($_POST['idproducto']);
   }

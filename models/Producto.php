@@ -14,7 +14,7 @@ class Producto extends Conexion{
     $this->accesoBD = parent::getConexion(); // El valor de retorno (getConexion) de esta funcion ha sido asignada a este objeto (accesoBD)
   }
 
-  //Metodo listar cursos
+  //Metodo listar productos
   public function listarProductos(){
     try {
       // 1. Preparamos la consulta
@@ -54,7 +54,33 @@ class Producto extends Conexion{
     }
   }
 
-
+  /*public function actualizarProducto(){
+      try {
+    //1. Preparamos la consulta
+    $consulta = $this->accesoBD->prepare("CALL spu_productos_actualizar(?,?,?,?,?,?,?,?)");
+    //2. Ejecutamos la consulta
+    $consulta->execute(
+      array(
+        $datos["nombreproducto"],
+        $datos["modelo"],
+        $datos["marca"],
+        $datos["color"],
+        $datos["conectividad"],
+        $datos["peso"],
+        $datos["fechainicio"],
+        $datos["precio"]
+      )
+    ); 
+    // INTENTE HACER EL ACTUALIZAR
+    
+  }
+  catch (Exception $e) {
+    die($e->getMessage());    
+  }
+  }
+  
+  
+  */
 
   public function eliminarProducto($idproducto = 0){
     try {

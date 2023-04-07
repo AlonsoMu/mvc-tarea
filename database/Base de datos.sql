@@ -91,4 +91,36 @@ CALL spu_productos_eliminar()
 
 DROP PROCEDURE
 
+-- ACTUALIZAR 
+
+DELIMITER $$
+CREATE PROCEDURE spu_productos_actualizar
+(
+IN idproducto_			INT,
+IN nombreproducto_		VARCHAR(50),
+IN modelo_			VARCHAR(30),
+IN marca_			VARCHAR(40),
+IN color_			VARCHAR(30),
+IN conectividad_		VARCHAR(30),
+IN peso_			VARCHAR(20),
+IN fecharegistro_		DATE,
+IN precio_			DECIMAL(7,2)
+)
+BEGIN
+	UPDATE productos SET
+	nombreproducto = nombreproducto_,
+	modelo = modelo_,
+	marca = marca_,
+	color = color_,
+	conectividad = conectividad_,
+	peso = peso_,
+	fecharegistro = fecharegistro_,
+	precio = precio_
+	WHERE idproducto = idproducto_;
+END $$
+
+CALL spu_productos_actualizar('7','HELIOS','GABINETE','SAMSUNG','BLANCO','ARMADO','PESADO','2023-07-04','4000')
+
+
+
 
